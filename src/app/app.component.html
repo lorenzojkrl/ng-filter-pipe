@@ -3,7 +3,7 @@
   <input type="text" id="filter" [(ngModel)]="filterBy" />
 </div>
 
-<div *ngFor="let user of usersList | filter: filterBy:'name'">
+<div *ngFor="let user of usersList | filter: filterBy">
   <ul>
     <li>{{ user.name }}</li>
   </ul>
