@@ -2,6 +2,7 @@
   <label for="filter">Filter by: </label>
   <input type="text" id="filter" [(ngModel)]="filterBy" />
 </div>
+<button (click)="onAddUser()">Add user</button>
 
 <div *ngFor="let user of usersList | filter: filterBy">
   <ul>
