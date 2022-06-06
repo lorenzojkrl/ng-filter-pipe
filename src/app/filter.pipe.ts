@@ -3,6 +3,7 @@ import { User } from './model';
 
 @Pipe({
   name: 'filter',
+  pure: false,
 })
 export class FilterPipe implements PipeTransform {
   transform(value: User[], filterString: string): User[] {
@@ -11,6 +12,7 @@ export class FilterPipe implements PipeTransform {
     }
     let filteredUsers: User[] = [];
     for (let user of value) {
+      // user['name'] might cause minification problems
       if (user['name'].toLowerCase().includes(filterString.toLowerCase())) {
         filteredUsers.push(user);
       }
